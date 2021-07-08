@@ -1,0 +1,16 @@
+@import 'styles/shared/titles.scss';
+@import 'styles/shared/descriptions.scss';
+@import 'styles/shared/padding.scss';
+
+.login {
+  height: 100vh;
+  max-height: 100vh;
+  background-image: url('../../assets/images/login/background.png');
+  width: 100%;
+  background-size: cover;
+  object-fit: cover;
+  display: grid;
+  place-items: center;
+  min-height: -webkit-fill-available;
+
+}

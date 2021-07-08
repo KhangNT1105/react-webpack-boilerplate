@@ -1,0 +1,17 @@
+@import 'styles/shared/titles.scss';
+@import 'styles/shared/padding.scss';
+
+.login__title {
+  @extend %pb-40;
+
+  h1 {
+    @extend %title-24;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 30px;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+}

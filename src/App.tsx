@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom'
 const App: React.FC = () => {
   return (
     <>
-      <Link to="/login">Login</Link>
-      <Link to="/signup">Sign Up</Link>
       <Routes />
     </>
   )

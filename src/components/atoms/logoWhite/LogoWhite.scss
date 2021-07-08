@@ -1,0 +1,14 @@
+.logoWhite {
+  width: 100%;
+  text-align: center;
+
+  &__logo {
+    margin: 0 auto;
+    padding-bottom: 15px;
+
+    img {
+      animation: rotate360 5s linear infinite;
+
+    }
+  }
+}

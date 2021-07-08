@@ -1,0 +1,29 @@
+@import 'styles/shared/descriptions.scss';
+@import 'styles/shared/padding.scss';
+
+.loginForm {
+  @extend %pb-32;
+
+  &__description {
+    @extend %pb-32;
+
+    p {
+      @extend %description-12;
+      text-align: center;
+      line-height: 15px;
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+  &__form {
+    width: 90%;
+    margin: 0 auto;
+
+    .form {
+      &__field {
+        @extend %pb-16;
+      }
+    }
+  }
+}

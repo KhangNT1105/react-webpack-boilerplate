@@ -1,3 +1,14 @@
 {
-    "Welcome to React": "Welcome to React and react-i18next"
+    "Welcome to React": "Welcome to React and react-i18next",
+    "LOGIN/DISCOVERY_HIGH_END":"Discovery High-end",
+    "LOGIN/SHOPPING_EXPERIENCE":"Shopping experience",
+    "LOGIN/DESCRIPTION":"Login or sign up to start discovery high-end shopping experience",
+    "LOGIN/NUMBER_PHONE_LABEL":"Numberphone",
+    "LOGIN/PASSWORD_LABEL":"Password",
+    "LOGIN/CONTINUE":"Continue",
+    "LOGIN/DONT_HAVE_AN_ACCOUNT":"Don't have an account?",
+    "LOGIN/SIGN_UP":"Sign up",
+    "LOGIN/FORGOTTEN_YOUR_PASSWORD":"Forgotten your password?",
+    "HOME/GET_STARTED":"Get started"
+
 }
