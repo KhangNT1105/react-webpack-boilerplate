@@ -25,6 +25,7 @@ const HomeWrapper = () => {
         <div className="home__logo">
           <LogoWhite />
         </div>
+
         <div className="home__button">
           <Link to={RoutesString.Login}>
             <Button

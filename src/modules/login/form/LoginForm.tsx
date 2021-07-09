@@ -17,24 +17,24 @@ const validateFields = {
   numberPhone: [
     {
       validator: validateRequired,
-      code: 'FORM_ERROR.REQUIRED_FIELD_EMAIL',
+      code: 'FORM_ERROR/REQUIRED_FIELD',
     },
   ],
   password: [
     {
       validator: validateRequired,
-      code: 'FORM_ERROR.REQUIRED_FIELD_PASSWORD',
+      code: 'FORM_ERROR/REQUIRED_FIELD',
     },
     {
       validator: validateMinLength(8),
-      code: 'FORM_ERROR.PASSWORD_LENGTH',
+      code: 'FORM_ERROR/PASSWORD_LENGTH',
       codeOptions: {
         number: 8,
       },
     },
     {
       validator: validateCapitalMinLength,
-      code: 'FORM_ERROR.PASSWORD_CAPITAL_LENGTH',
+      code: 'FORM_ERROR/PASSWORD_CAPITAL_LENGTH',
     },
   ],
 }
@@ -74,11 +74,12 @@ const LoginForm: React.FC<ILoginForm> = ({ initialValues, handleSubmit }) => {
               value={formik.values.numberPhone}
               onChange={formik.handleChange}
               required={true}
+              onBlur={formik.handleBlur}
               error={
                 formik.touched.numberPhone && Boolean(formik.errors.numberPhone)
               }
               helperText={
-                formik.touched.numberPhone && formik.errors.numberPhone
+                formik.touched.numberPhone && t(formik.errors.numberPhone)
               }
             />
           </div>
@@ -92,8 +93,9 @@ const LoginForm: React.FC<ILoginForm> = ({ initialValues, handleSubmit }) => {
               value={formik.values.password}
               onChange={formik.handleChange}
               required={true}
+              onBlur={formik.handleBlur}
               error={formik.touched.password && Boolean(formik.errors.password)}
-              helperText={formik.touched.password && formik.errors.password}
+              helperText={formik.touched.password && t(formik.errors.password)}
             />
           </div>
           <Button

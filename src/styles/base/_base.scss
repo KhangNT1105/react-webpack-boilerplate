@@ -19,7 +19,7 @@ body {
   font-family: $font-montserrat;
   font-weight: 400;
   min-height: 100vh;
-
+  min-height: -webkit-fill-available;
 }
 
 #app {}
@@ -46,4 +46,12 @@ button {
     font-family: $font-montserrat;
 
   }
+}
+
+p {
+  line-height: 14px;
+}
+
+strong {
+  font-weight: 600;
 }

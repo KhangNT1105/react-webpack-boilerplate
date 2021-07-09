@@ -37,12 +37,17 @@ if (IS_DEVELOPMENT) {
   app.use(errorHandler({ log: errorNotification }))
   https.globalAgent.options.rejectUnauthorized = false
 }
-const server = HTTPS
-  ? https.createServer(credentials, app)
-  : http.createServer(app)
+const server =
+  HTTPS === 'true'
+    ? https.createServer(credentials, app)
+    : http.createServer(app)
 
 app.use((req, res, next) => {
-  if (!/(\.(?!html)\w+$|__webpack.*)/.test(req.url)) {
+  if (
+    /(\.(?!html)\w+$|__webpack.*)/.test(req.url) ||
+    req.url.indexOf('.css') > 0
+  ) {
+  } else {
     req.url = '/' // this would make express-js serve index.html
   }
   next()
@@ -52,6 +57,7 @@ app.use(
   webpackMiddleware(compiler, {
     stats: 'minimal',
     writeToDisk: false,
+    // publicPath: devConfig.output.publicPath,
   })
 )
 app.use(

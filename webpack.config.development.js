@@ -1,26 +1,30 @@
-const path = require("path");
+const path = require('path')
 
-const config = require("./webpack.config");
+const config = require('./webpack.config')
 
-const { merge } = require("webpack-merge");
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const { merge } = require('webpack-merge')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
-const webpack = require("webpack");
+const webpack = require('webpack')
 module.exports = merge(config, {
-  mode: "development",
+  mode: 'development',
   entry: [
-    "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true",
+    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true',
   ],
-  devtool: "inline-source-map",
+  // devServer: {
+  //   hot: true,
+  //   open: true,
+  // },
+  devtool: 'cheap-module-source-map',
   output: {
-    path: path.resolve(__dirname, "public"),
-    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, 'public'),
+    filename: '[name].bundle.js',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin(),
-  ],
+  ].filter(Boolean),
   module: {
     rules: [],
   },
-});
+})

@@ -1,1 +1,40 @@
-.signUp {}
+@import 'styles/shared/titles.scss';
+@import 'styles/shared/descriptions.scss';
+@import 'styles/shared/padding.scss';
+
+.signUp {
+  background-image: url('../../assets/images/login/background.png');
+  width: 100%;
+  background-size: cover;
+  object-fit: cover;
+  display: grid;
+  place-items: center;
+  @extend %pt-16;
+
+  &__wrapper {
+    // width: 90%;
+    // margin: 0 auto
+  }
+
+  &__title {
+    @extend %pb-40;
+
+
+    h1 {
+      @extend %title-24;
+      text-align: center;
+    }
+  }
+
+  &__description {
+    @extend %pb-32;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+
+    p {
+      @extend %description-12
+    }
+
+  }
+}

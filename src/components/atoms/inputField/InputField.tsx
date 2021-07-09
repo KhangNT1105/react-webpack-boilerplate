@@ -4,18 +4,26 @@ import { makeStyles, TextField } from '@material-ui/core'
 
 const useStyles = makeStyles({
   root: {
-    border: '1px solid #D9D9D9',
-    borderRadius: 8,
-    padding: '5px 0',
     '& div': {
-      marginTop: '10px',
+      border: '1px solid #D9D9D9',
+      borderRadius: 8,
+      padding: '15px 0 10px',
+      marginTop: 0,
       '& input': {
         padding: '6px 16px 7px ',
+      },
+      '& p': {
+        fontFamily: 'Montserrat',
+        fontSize: '1rem',
       },
     },
     '& div:before, & div:after': {
       borderBottom: 'none !important',
     },
+  },
+  errorText: {
+    fontFamily: 'Montserrat',
+    fontSize: '1rem',
   },
   textField: {
     marginTop: '10px',
@@ -23,10 +31,10 @@ const useStyles = makeStyles({
   },
   label: {
     padding: '0 16px ',
-    transform: 'translate(0px, 18px) scale(1)',
+    transform: 'translate(0px, 22px) scale(1)',
   },
   labelFocused: {
-    transform: 'translate(3px, 9px) scale(0.8)',
+    transform: 'translate(3px, 10px) scale(0.8)',
   },
   labelAsterisk: {
     color: 'red',
@@ -38,6 +46,9 @@ const InputField: React.FC<IInputField> = (props) => {
   return (
     <TextField
       className={classes.root}
+      FormHelperTextProps={{
+        className: classes.errorText,
+      }}
       InputLabelProps={{
         classes: {
           root: classes.label,

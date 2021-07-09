@@ -2,8 +2,9 @@
   background-image: url('../../assets/images/onboarding.png');
   width: 100%;
   background-size: cover;
+  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
   height: 100vh;
-  min-height: 100vh;
   text-align: center;
   display: grid;
   place-items: center;
@@ -17,7 +18,10 @@
     width: 90%;
   }
 
+
   &__button {
+    width: 100%;
+
     a {
       text-decoration: none;
     }

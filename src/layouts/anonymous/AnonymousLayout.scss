@@ -1,5 +1,18 @@
 .anonymousLayout {
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
 
+  &__header {
+    flex: 0 1 auto;
 
-  &__content {}
+    svg {
+      font-size: 50px;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+
+  }
 }

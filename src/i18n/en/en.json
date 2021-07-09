@@ -9,6 +9,23 @@
     "LOGIN/DONT_HAVE_AN_ACCOUNT":"Don't have an account?",
     "LOGIN/SIGN_UP":"Sign up",
     "LOGIN/FORGOTTEN_YOUR_PASSWORD":"Forgotten your password?",
-    "HOME/GET_STARTED":"Get started"
-
+    "HOME/GET_STARTED":"Get started",
+    "SIGNUP/TITLE":"Sign Up",
+    "SIGNUP/DESCRIPTION":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "SIGNUP/FULL_NAME_LABEL":"Fullname",
+    "SIGNUP/EMAIL_LABEL":"Email",
+    "SIGNUP/MOBILE_NUMBER_LABEL":"Mobile Number",
+    "SIGNUP/PASSWORD_LABEL":"Password",
+    "SIGNUP/CONFIRM_PASSWORD_LABEL":"Confirm Password",
+    "SIGNUP/RECEIVE_DESCRIPTION":"I CONSENT TO RECEIVE INFORMATION VIA THE FOLLOWING CHANNELS:",
+    "SIGNUP/EDM_LABEL":"EDM",
+    "SIGNUP/SMS_LABEL":"SMS",
+    "SIGNUP/I_AGREE_TO":"I agree to",
+    "SIGNUP/THE_TERMS_AND_CONDITIONS":"the terms and conditions",
+    "SIGNUP/AND":"and",
+    "SIGNUP/PRIVACY_POLICY":"privacy policy",
+    "SUBMIT":"Submit",
+    "FORM_ERROR/REQUIRED_FIELD":"This field is required",
+    "FORM_ERROR/PASSWORD_LENGTH":"Password needs to be at least {{number}} characters",
+    "FORM_ERROR/PASSWORD_CAPITAL_LENGTH":"Password needs to contain at least one capital letter"
 }
