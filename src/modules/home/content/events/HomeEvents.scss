@@ -1,0 +1,49 @@
+@import 'styles/abstracts/variables.scss';
+@import 'styles/shared/padding.scss';
+@import 'styles/shared/titles.scss';
+@import 'styles/shared/descriptions.scss';
+
+.homeEvents {
+
+  &__wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    @extend %pb-16;
+    @extend %pl-24;
+    @extend %pr-24;
+
+    h5 {
+      @extend %title-20;
+    }
+
+    p {
+      @extend %description-10;
+
+      color: $primary-color;
+      text-align: right;
+      font-weight: 500;
+    }
+  }
+
+  &__content {
+    &__events {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(100px, 1fr));
+      gap: 8px;
+
+      .event {
+        border-radius: 8px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

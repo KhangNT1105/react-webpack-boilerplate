@@ -1,0 +1,12 @@
+@import 'styles/shared/padding.scss';
+
+.homeContent {
+  @extend %pb-16;
+  @extend %pt-16;
+
+  &__tabs {
+    @extend %pb-32
+  }
+
+  &__content {}
+}

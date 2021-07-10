@@ -23,7 +23,7 @@ module.exports = merge(config, {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
     // minimize image
     new ImageMinimizerPlugin({
       minimizerOptions: {

@@ -27,5 +27,15 @@
     "SUBMIT":"Submit",
     "FORM_ERROR/REQUIRED_FIELD":"This field is required",
     "FORM_ERROR/PASSWORD_LENGTH":"Password needs to be at least {{number}} characters",
-    "FORM_ERROR/PASSWORD_CAPITAL_LENGTH":"Password needs to contain at least one capital letter"
+    "FORM_ERROR/PASSWORD_CAPITAL_LENGTH":"Password needs to contain at least one capital letter",
+    "HOME/WELCOME_BACK":"Welcome Back!",
+    "HOME/POINTS":"Points",
+    "HOME/WHATS_ON":"What's On",
+    "HOME/HAPPENING_RIGHT_NOW":"Happening Right Now",
+    "HOME/EVENTS":"Events",
+    "HOME/REWARDS":"Rewards",
+    "HOME/LATEST_PROMOS":"Latest Promo's",
+    "HOME/SEE_ALL":"See all",
+    "HOME/SPECIAL_SERVICES":"Special Services",
+    "HOME/EXCLUSIVE_FOR_YOU":"Exclusive for you"
 }

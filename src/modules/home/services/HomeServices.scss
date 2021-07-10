@@ -1,0 +1,47 @@
+@import 'styles/abstracts/variables.scss';
+@import 'styles/shared/titles.scss';
+@import 'styles/shared/padding.scss';
+@import 'styles/shared/descriptions.scss';
+
+.homeServices {
+  background-color: $home-bg-color-grey;
+  @extend %pt-32;
+  @extend %pb-16;
+
+  &__wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  &__header {
+    @extend %pb-16;
+    @extend %pl-24;
+    @extend %pr-24;
+  }
+
+  &__section {
+    h4 {
+      @extend %description-10;
+      color: $primary-color;
+      font-weight: 700;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h5 {
+      @extend %title-20;
+      line-height: 35px;
+    }
+
+    p {
+      @extend %description-10;
+      color: $primary-color;
+      text-align: right;
+      font-weight: 500;
+    }
+  }
+}

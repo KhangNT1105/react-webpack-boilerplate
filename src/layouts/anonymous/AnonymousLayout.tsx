@@ -7,7 +7,7 @@ const AnonymousLayout: React.FC = ({ children }) => {
   const { location, push } = useHistory()
   const isLoginPath =
     location.pathname === RoutesString.Login ||
-    location.pathname === RoutesString.Home
+    location.pathname === RoutesString.Onboarding
   const handleClickGoBack = () => {
     push(RoutesString.Login)
   }

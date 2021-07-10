@@ -1,16 +1,42 @@
+@use "sass:math";
+// %description-12 {
+//   font-size: 1rem;
+//   font-family: $font-montserrat;
+// }
+
+// %description-15 {
+//   font-size: 1.25rem;
+//   font-family: $font-montserrat;
+// }
+
+// %description-16 {
+//   font-size: 1.6rem;
+//   font-family: $font-montserrat;
+// }
+
 @import 'styles/abstracts/variables.scss';
 
-%description-12 {
-  font-size: 1rem;
-  font-family: $font-montserrat;
+@function toRem($value) {
+  $remValue: math.div($value, 12) + rem;
+  @return $remValue;
 }
 
-%description-15 {
-  font-size: 1.25rem;
-  font-family: $font-montserrat;
-}
+$sizes: 40,
+32,
+30,
+24,
+20,
+16,
+15,
+12,
+10,
+8;
 
-%description-16 {
-  font-size: 1.6rem;
-  font-family: $font-montserrat;
+@each $size in $sizes {
+  %description-#{$size} {
+    font-size: toRem($size);
+    font-family: $font-montserrat;
+
+  }
+
 }

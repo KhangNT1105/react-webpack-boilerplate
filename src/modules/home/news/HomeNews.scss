@@ -1,0 +1,32 @@
+@import 'styles/shared/padding.scss';
+@import 'styles/shared/titles.scss';
+@import 'styles/shared/descriptions.scss';
+@import 'styles/abstracts/variables.scss';
+
+.homeNews {
+  @extend %pt-103;
+  @extend %pb-16;
+  background-color: $home-bg-color-grey;
+
+  &__wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @extend %pl-24;
+    @extend %pb-16;
+
+    h2 {
+      color: $primary-color;
+      @extend %description-10;
+      font-weight: 700;
+    }
+
+    p {
+      @extend %title-20;
+      line-height: 35px;
+
+    }
+  }
+}

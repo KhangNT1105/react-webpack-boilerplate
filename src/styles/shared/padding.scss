@@ -1,9 +1,11 @@
-$sizes: 40,
+$sizes: 103,
+40,
 32,
 24,
 16,
 10,
-8;
+8,
+6;
 
 @each $size in $sizes {
   %pb-#{$size} {
