@@ -1,0 +1,41 @@
+@import 'styles/abstracts/variables.scss';
+@import 'styles/shared/padding.scss';
+@import 'styles/shared/titles.scss';
+@import 'styles/shared/descriptions.scss';
+
+.footer {
+  background-image: url('../../../assets/images/footer/footerBg.png');
+  background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  @extend %pt-20;
+
+  &__wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  &__description {
+    @extend %pb-16;
+
+    p {
+      @extend %description-14;
+      line-height: 19.6px;
+    }
+  }
+
+  &__social {
+    @extend %pb-30;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border-color-2;
+
+    &__facebook {
+      @extend %pr-24
+    }
+
+    svg {
+      font-size: 2rem;
+    }
+  }
+}

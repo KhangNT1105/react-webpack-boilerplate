@@ -16,6 +16,7 @@ module.exports = merge(config, {
   output: {
     path: path.join(__dirname, 'build'),
     filename: '[name].[contenthash].bundle.js',
+    publicPath: '/',
   },
   optimization: {
     minimize: true,

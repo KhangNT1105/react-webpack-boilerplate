@@ -2,6 +2,6 @@ export const RoutesString = {
   Home: '/home',
   Login: '/login',
   SignUp: '/signup',
-  Onboarding: '/onboarding',
+  Onboarding: '/',
   Error404: '/404',
 }

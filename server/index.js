@@ -23,7 +23,7 @@ const credentials = { key: privateKey, cert: certificate }
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development'
 const { PORT, HTTPS } = process.env
 
-const compiler = webpack(IS_DEVELOPMENT ? devConfig : prodConfig)
+const compiler = webpack(devConfig)
 
 const errorNotification = (err, str, req) => {
   const title = 'Error in ' + req.method + ' ' + req.url
@@ -32,6 +32,7 @@ const errorNotification = (err, str, req) => {
     message: str,
   })
 }
+console.log(IS_DEVELOPMENT)
 if (IS_DEVELOPMENT) {
   // only use in development
   app.use(errorHandler({ log: errorNotification }))
