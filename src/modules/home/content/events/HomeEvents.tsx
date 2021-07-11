@@ -11,8 +11,8 @@ const HomeEvents: React.FC = () => {
   const items = [event1, event2, event3, event4, event5, event6]
   const { t } = useTranslation()
   const renderItems = (items: string[]) =>
-    items.map((item) => (
-      <div className="event">
+    items.map((item, index) => (
+      <div className="event" key={`event-${index}`}>
         <img src={item} alt="event" />
       </div>
     ))

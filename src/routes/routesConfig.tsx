@@ -12,14 +12,7 @@ const Error404Page = lazy(() => import('pages/errors/error404/Error404'))
 
 export const routesConfig: IRoutes[] = [
   {
-    exact: true,
-    page: Error404Page,
-    path: RoutesString.Error404,
-  },
-  {
     layout: AnonymousLayout,
-    path: '/',
-    exact: true,
     routes: [
       {
         exact: true,
@@ -36,31 +29,24 @@ export const routesConfig: IRoutes[] = [
         path: RoutesString.Onboarding,
         page: OnboardingPage,
       },
-      {
-        page: () => <Redirect to={RoutesString.Error404} />,
-      },
     ],
   },
   {
     layout: MemberLayout,
-    path: '/home',
     routes: [
       {
         exact: true,
         page: HomePage,
         path: RoutesString.Home,
       },
-      {
-        page: () => <Redirect to={RoutesString.Error404} />,
-      },
     ],
   },
   {
+    exact: true,
+    page: Error404Page,
     path: '*',
-    routes: [
-      {
-        component: () => <Redirect to={RoutesString.Error404} />,
-      },
-    ],
   },
+  // {
+  //   redirect: RoutesString.Error404,
+  // },
 ]

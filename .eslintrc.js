@@ -8,6 +8,12 @@ module.exports = {
     react: {
       version: 'detect',
     },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/'],
+      },
+    },
   },
   extends: [
     'plugin:react/recommended',
@@ -18,6 +24,7 @@ module.exports = {
     'plugin:import/typescript',
     'plugin:jsx-a11y/recommended',
     'plugin:eslint-comments/recommended',
+    'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
   ],
   rules: {
