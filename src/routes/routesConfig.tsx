@@ -2,8 +2,8 @@ import { lazy } from 'react'
 import { IRoutes } from './Routes.d'
 import { RoutesString } from './routesString'
 import { Redirect } from 'react-router-dom'
-import AnonymousLayout from 'layouts/anonymous/AnonymousLayout'
-import MemberLayout from 'layouts/member/MemberLayout'
+const AnonymousLayout = lazy(() => import('layouts/anonymous/AnonymousLayout'))
+const MemberLayout = lazy(() => import('layouts/member/MemberLayout'))
 const LoginPage = lazy(() => import('pages/login/LoginPage'))
 const OnboardingPage = lazy(() => import('pages/onboarding/OnboardingPage'))
 const HomePage = lazy(() => import('pages/home/HomePage'))
@@ -16,18 +16,16 @@ export const routesConfig: IRoutes[] = [
     routes: [
       {
         exact: true,
+        path: RoutesString.Onboarding,
+        page: OnboardingPage,
+      },
+      {
         page: LoginPage,
         path: RoutesString.Login,
       },
       {
-        exact: true,
         path: RoutesString.SignUp,
         page: SignUpPage,
-      },
-      {
-        exact: true,
-        path: RoutesString.Onboarding,
-        page: OnboardingPage,
       },
     ],
   },
@@ -35,18 +33,13 @@ export const routesConfig: IRoutes[] = [
     layout: MemberLayout,
     routes: [
       {
-        exact: true,
         page: HomePage,
         path: RoutesString.Home,
       },
     ],
   },
   {
-    exact: true,
     page: Error404Page,
     path: '*',
   },
-  // {
-  //   redirect: RoutesString.Error404,
-  // },
 ]
