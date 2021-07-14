@@ -2,31 +2,68 @@
 @import 'styles/shared/titles.scss';
 @import 'styles/shared/descriptions.scss';
 @import 'styles/abstracts/variables.scss';
+@import 'styles/abstracts/mixins.scss';
 
 .homeNews {
-  @extend %pt-103;
   @extend %pb-16;
   background-color: $home-bg-color-grey;
+  @extend %pt-103;
+
+  @include responds-to("medium") {
+    padding-top: 0;
+    margin-top: -2px;
+    padding-bottom: 0;
+
+  }
 
   &__wrapper {
-    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
-  &__title {
-    @extend %pl-24;
-    @extend %pb-16;
+  &__pc {
+    display: none;
 
-    h2 {
-      color: $primary-color;
-      @extend %description-10;
-      font-weight: 700;
+    @include responds-to("medium") {
+      display: block;
+
+    }
+  }
+
+  &__mobile {
+    display: block;
+
+    @include responds-to("medium") {
+      display: none;
     }
 
-    p {
-      @extend %title-20;
-      line-height: 35px;
+    &__title {
+      @extend %pl-24;
+      @extend %pb-16;
 
+      h2 {
+        color: $primary-color;
+        @extend %description-10;
+        font-weight: 700;
+      }
+
+      p {
+        @extend %title-20;
+        line-height: 35px;
+
+      }
+    }
+
+    &__carousel {
+
+      .alice-carousel {
+        .carousel-item {
+          img {
+            width: 96%;
+            border-radius: 8px;
+          }
+        }
+      }
     }
   }
 }

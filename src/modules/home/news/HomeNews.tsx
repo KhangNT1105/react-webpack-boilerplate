@@ -2,9 +2,9 @@ import React from 'react'
 import './HomeNews.scss'
 import { useTranslation } from 'react-i18next'
 import Carousel from 'components/molecules/Carousel'
-import img1 from 'assets/images/home/carousel1.png'
+import img2 from 'assets/images/home/carouselPC.png'
 const HomeNews: React.FC = () => {
-  const carouselItems = [img1, img1, img1]
+  const carouselItems = [img2, img2, img2]
   const { t } = useTranslation()
   const carouselConfig = {
     images: carouselItems,
@@ -14,12 +14,19 @@ const HomeNews: React.FC = () => {
   return (
     <div className="homeNews">
       <div className="homeNews__wrapper">
-        <div className="homeNews__title">
-          <h2>{t('HOME/WHATS_ON').toUpperCase()}</h2>
-          <p>{t('HOME/HAPPENING_RIGHT_NOW')}</p>
+        <div className="homeNews__mobile container">
+          <div className="homeNews__mobile__title">
+            <h2>{t('HOME/WHATS_ON').toUpperCase()}</h2>
+            <p>{t('HOME/HAPPENING_RIGHT_NOW')}</p>
+          </div>
+          <div className="homeNews__mobile__carousel">
+            <Carousel {...carouselConfig} paddingRight={10} />
+          </div>
         </div>
-        <div className="homeNews__carousel">
-          <Carousel {...carouselConfig} />
+        <div className="homeNews__pc">
+          <div className="homeNews__pc__carousel">
+            <Carousel {...carouselConfig} />
+          </div>
         </div>
       </div>
     </div>

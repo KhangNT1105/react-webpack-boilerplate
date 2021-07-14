@@ -2,42 +2,56 @@
 @import 'styles/shared/descriptions.scss';
 @import 'styles/shared/padding.scss';
 @import 'styles/abstracts/variables.scss';
+@import 'styles/abstracts/mixins.scss';
 
 .homeBanner {
   background-image: url('../../../assets/images/home/banner.png');
   background-size: cover;
   width: 100%;
   background-repeat: no-repeat;
-  min-height: 187px;
   position: relative;
+  min-height: 187px;
+
+  @include responds-to("medium") {
+    background-image: url('../../../assets/images/home/bannerPC.png');
+    min-height: 320px;
+    height: calc(10vw +70px);
+  }
 
   &__wrapper {
     position: absolute;
-    bottom: -35%;
+    top: 88%;
     left: 0;
     width: 100%;
+    z-index: 99;
+    transform: translateY(-50%)
   }
 
   &__text {
-    width: 90%;
-    margin: 0 auto;
     @extend %pl-24;
     @extend %pb-16;
 
     h1 {
       @extend %title-30;
+
+      @include responds-to('extra-large') {
+        font-size: 64px;
+        font-weight: 400;
+      }
     }
   }
 
   &__information {
     background-color: $color-white;
-    width: 90%;
-    margin: 0 auto;
     box-shadow: 0px 2px 8px rgba(74, 74, 74, 0.1);
     border-radius: 8px;
     padding: 14px 15px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    @include responds-to("medium") {
+      padding: 10px 30px;
+    }
 
     &__tier {
       @extend %description-10;

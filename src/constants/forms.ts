@@ -14,6 +14,12 @@ export enum FIELD_TYPE {
   SUBMIT = 'submit',
 }
 
+export enum VARIANT {
+  TEXT = 'text',
+  OUTLINED = 'outlined',
+  CONTAINED = 'contained',
+}
+
 export enum SIGN_UP_FIELD {
   FULL_NAME = 'fullName',
   EMAIL = 'email',
@@ -23,4 +29,13 @@ export enum SIGN_UP_FIELD {
   EDM_SUBSCRIPTION = 'edmSubscription',
   SMS_SUBSCRIPTION = 'smsSubscription',
   TNC = 'tnc',
+}
+
+export enum FORGOT_PASSWORD_FIELD {
+  NUMBER_PHONE = 'numberPhone',
+}
+
+export enum CHANGE_PASSWORD_FIELD {
+  NEW_PASSWORD = 'newPassword',
+  CONFIRM_PASSWORD = 'confirmPassword',
 }

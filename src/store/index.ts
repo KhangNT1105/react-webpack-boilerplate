@@ -1,14 +1,26 @@
-import { applyMiddleware, createStore } from 'redux'
+// configureStore.js
+import { applyMiddleware, compose, createStore } from 'redux'
+import { routerMiddleware } from 'connected-react-router'
+import createRootReducer from './rootReducers'
 import thunk from 'redux-thunk'
-import rootReducers from './rootReducers'
-import { composeWithDevTools } from 'redux-devtools-extension'
-import { IS_DEVELOPMENT } from 'constants/commons'
 
-const store = createStore(
-  rootReducers,
-  IS_DEVELOPMENT
-    ? composeWithDevTools(applyMiddleware(thunk))
-    : applyMiddleware(thunk)
-)
+export default function configureStore(history: any, preloadedState: any) {
+  const middleware = [thunk, routerMiddleware(history)]
 
-export default store
+  const store = createStore(
+    createRootReducer(history), // root reducer with router state
+    preloadedState,
+    compose(applyMiddleware(...middleware))
+  )
+
+  return store
+}
+
+// const store = createStore(
+//   rootReducers,
+//   IS_DEVELOPMENT
+//     ? composeWithDevTools(applyMiddleware(thunk))
+//     : applyMiddleware(thunk)
+// )
+
+// export default store

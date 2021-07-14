@@ -1,0 +1,55 @@
+@import 'styles/abstracts/variables.scss';
+@import 'styles/shared/descriptions.scss';
+
+.dropdown {
+  &__wrapper {
+    position: relative;
+  }
+
+  &__items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color-white;
+    z-index: -1;
+    min-width: 180px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 5px 0;
+    border-radius: 8px;
+    max-height: 180px;
+    overflow: auto;
+    opacity: 0;
+    transform-origin: top left;
+    transition: .3s;
+    transform: scale(0.5);
+
+    &.open {
+      opacity: 1;
+      z-index: 99;
+      transform: scale(1);
+
+    }
+
+    .dropdown-wrapper {
+      &__title {
+        padding: 0 15px;
+        padding-top: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        @extend %description-8;
+        font-weight: 500;
+        color: $color-grey-4;
+      }
+    }
+
+    .dropdown-item {
+      padding: 10px 15px;
+
+
+      &:hover,
+      &:focus {
+        background-color: $home-bg-color-grey;
+      }
+    }
+  }
+}

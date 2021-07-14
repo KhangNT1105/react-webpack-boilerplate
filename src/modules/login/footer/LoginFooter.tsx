@@ -14,8 +14,8 @@ const LoginFooter: React.FC = () => {
         </p>
       </div>
       <div className="loginFooter__forgot">
-        <Link to={RoutesString.SignUp}>
-          {t('LOGIN/FORGOTTEN_YOUR_PASSWORD')}
+        <Link to={RoutesString.ForgotPassword}>
+          {t('LOGIN/FORGOT_YOUR_PASSWORD')}
         </Link>
       </div>
     </div>

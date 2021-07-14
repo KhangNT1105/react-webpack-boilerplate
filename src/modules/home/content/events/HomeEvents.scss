@@ -1,24 +1,26 @@
 @import 'styles/abstracts/variables.scss';
 @import 'styles/shared/padding.scss';
 @import 'styles/shared/titles.scss';
+@import 'styles/abstracts/mixins.scss';
 @import 'styles/shared/descriptions.scss';
 
 .homeEvents {
 
-  &__wrapper {
-    width: 90%;
-    margin: 0 auto;
-  }
+  &__wrapper {}
 
   &__title {
-    display: flex;
-    justify-content: space-between;
+    @include displayFlex(flex, space-between, center);
     @extend %pb-16;
     @extend %pl-24;
     @extend %pr-24;
 
     h5 {
       @extend %title-20;
+
+      @include responds-to('medium') {
+        font-size: 2.5rem;
+        line-height: 84px
+      }
     }
 
     p {
@@ -35,6 +37,12 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(100px, 1fr));
       gap: 8px;
+
+      @include responds-to("medium") {
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+        gap: 55px;
+
+      }
 
       .event {
         border-radius: 8px;

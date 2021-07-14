@@ -191,8 +191,20 @@ const SignUpForm: React.FC<ISignUpForm> = ({ initialValues, handleSubmit }) => {
             {renderCheckboxFields(checkboxFields)}
           </div>
           <div className="form__tnc">{renderCheckboxFields(tncField)}</div>
-          <div className="form__submit">
-            <div className="form__submit__wrapper">
+          <div className="form__submit__mobile">
+            <div className="form__submit__mobile__wrapper">
+              <Button
+                fullWidth={true}
+                variant="contained"
+                type={FIELD_TYPE.SUBMIT}
+                className={classes.button}
+              >
+                {t('SUBMIT').toUpperCase()}
+              </Button>
+            </div>
+          </div>
+          <div className="form__submit__pc">
+            <div className="form__submit__pc__wrapper">
               <Button
                 fullWidth={true}
                 variant="contained"

@@ -3,10 +3,7 @@
 @import 'styles/shared/padding.scss';
 
 .signUp {
-  background-image: url('../../assets/images/login/background.png');
   width: 100%;
-  background-size: cover;
-  object-fit: cover;
   display: grid;
   place-items: center;
   @extend %pt-16;

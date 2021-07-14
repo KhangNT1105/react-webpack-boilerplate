@@ -7,10 +7,10 @@ const HomeBanner: React.FC = () => {
   return (
     <div className="homeBanner">
       <div className="homeBanner__wrapper">
-        <div className="homeBanner__text">
+        <div className="homeBanner__text container">
           <h1>{t('HOME/WELCOME_BACK')}</h1>
         </div>
-        <div className="homeBanner__information">
+        <div className="homeBanner__information container">
           <div className="homeBanner__information__left">
             <div className="homeBanner__information__tier">
               <p>GOLD MEMBER</p>

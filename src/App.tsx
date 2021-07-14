@@ -15,28 +15,6 @@ const App: React.FC = () => {
   return (
     <>
       <Routes />
-
-      {/* <Switch>
-        <Suspense fallback={<div />}>
-          <Route path="/" exact>
-            <AnonymousLayout>
-              <OnboardingPage />
-            </AnonymousLayout>
-          </Route>
-        </Suspense>
-        <Suspense fallback={<div />}>
-          <Route path="/abc" exact>
-            <AnonymousLayout>
-              <OnboardingPage />
-            </AnonymousLayout>
-          </Route>
-        </Suspense>
-        <Suspense fallback={<div />}>
-          <Route path="*" exact>
-            <Error404Page />
-          </Route>
-        </Suspense>
-      </Switch> */}
     </>
   )
 }

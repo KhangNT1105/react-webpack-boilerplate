@@ -9,10 +9,13 @@ import {
   validateMinLength,
   validateRequired,
 } from 'utils/validation'
-import { makeStyles } from '@material-ui/core'
+import { InputAdornment, makeStyles } from '@material-ui/core'
 import Button from 'components/atoms/button/Button'
 import { FIELD_TYPE, LOGIN_FIELD } from 'constants/forms'
 import InputField from 'components/atoms/inputField/InputField'
+import Dropdown from 'components/atoms/dropdown/Dropdown'
+import countryCode from 'dummyData/countryCode.json'
+import { useMemo } from 'react'
 const validateFields = {
   numberPhone: [
     {
@@ -51,6 +54,18 @@ const useStyles = makeStyles({
 const LoginForm: React.FC<ILoginForm> = ({ initialValues, handleSubmit }) => {
   const { t } = useTranslation()
   const classes = useStyles()
+  const countryCodes = useMemo(
+    () => [
+      {
+        title: 'All mobile number',
+        items: countryCode.map((item) => ({
+          label: item.label,
+          value: item.value,
+        })),
+      },
+    ],
+    []
+  )
   const formik = useFormik({
     initialValues,
     validate: checkValueError(validateFields),
@@ -58,6 +73,9 @@ const LoginForm: React.FC<ILoginForm> = ({ initialValues, handleSubmit }) => {
       handleSubmit()
     },
   })
+  const handleDropdownChange = (value: string) => {
+    console.log(value)
+  }
   return (
     <div className="loginForm">
       <div className="loginForm__description">
@@ -74,12 +92,23 @@ const LoginForm: React.FC<ILoginForm> = ({ initialValues, handleSubmit }) => {
               value={formik.values.numberPhone}
               onChange={formik.handleChange}
               required={true}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Dropdown
+                      handleChange={handleDropdownChange}
+                      items={countryCodes}
+                      defaultValue={countryCodes[0].items[0].value}
+                    />
+                  </InputAdornment>
+                ),
+              }}
               onBlur={formik.handleBlur}
               error={
                 formik.touched.numberPhone && Boolean(formik.errors.numberPhone)
               }
               helperText={
-                formik.touched.numberPhone && t(formik.errors.numberPhone)
+                formik.touched.numberPhone && t(formik.errors.numberPhone || '')
               }
             />
           </div>
@@ -95,7 +124,9 @@ const LoginForm: React.FC<ILoginForm> = ({ initialValues, handleSubmit }) => {
               required={true}
               onBlur={formik.handleBlur}
               error={formik.touched.password && Boolean(formik.errors.password)}
-              helperText={formik.touched.password && t(formik.errors.password)}
+              helperText={
+                formik.touched.password && t(formik.errors.password || '')
+              }
             />
           </div>
           <Button

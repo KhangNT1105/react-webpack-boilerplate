@@ -93,6 +93,6 @@ $breakpoints : ('super-large-under':1365px,
   }
 
   @else {
-    @warn "`{$breakpoint}` isn't in breakpoints";
+    @warn "`#{$breakpoint}` isn't in breakpoints";
   }
 }

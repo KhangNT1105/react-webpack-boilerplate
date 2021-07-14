@@ -18,7 +18,7 @@ const HomeEvents: React.FC = () => {
     ))
   return (
     <div className="homeEvents">
-      <div className="homeEvents__wrapper">
+      <div className="homeEvents__wrapper container">
         <div className="homeEvents__title">
           <h5>{t('HOME/LATEST_PROMOS')}</h5>
           <p>{t('HOME/SEE_ALL').toUpperCase()}</p>

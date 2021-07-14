@@ -4,11 +4,16 @@ import { ICarousel } from './Carousel.d'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import AliceCarousel from 'react-alice-carousel'
 
-const Carousel: React.FC<ICarousel> = ({ id, images }) => {
-  const responsive = {
+const Carousel: React.FC<ICarousel> = ({
+  responsive = {
     0: { items: 1 },
-    1024: { items: 1, paddingRight: 0 },
-  }
+    1024: { items: 1 },
+  },
+  id,
+  images,
+  className,
+  ...props
+}) => {
   const handleOnDragStart = (e: DragEvent<HTMLImageElement>) =>
     e.preventDefault()
 
@@ -28,14 +33,16 @@ const Carousel: React.FC<ICarousel> = ({ id, images }) => {
     ))
   }
   return (
-    <AliceCarousel
-      mouseTracking
-      responsive={responsive}
-      items={renderItems(images)}
-      paddingRight={20}
-      disableDotsControls={true}
-      disableButtonsControls={true}
-    />
+    <div className={className}>
+      <AliceCarousel
+        {...props}
+        responsive={responsive}
+        items={renderItems(images)}
+        disableDotsControls={true}
+        disableButtonsControls={true}
+        mouseTracking={true}
+      />
+    </div>
   )
 }
 export default Carousel

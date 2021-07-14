@@ -13,12 +13,16 @@ const AnonymousLayout: React.FC = ({ children }) => {
   }
   return (
     <div className="anonymousLayout">
-      {!isLoginPath && (
-        <div className="anonymousLayout__header" onClick={handleClickGoBack}>
-          <RiArrowLeftSLine />
+      <div className="anonymousLayout__wrapper">
+        {!isLoginPath && (
+          <div className="anonymousLayout__header" onClick={handleClickGoBack}>
+            <RiArrowLeftSLine />
+          </div>
+        )}
+        <div className="anonymousLayout__content">
+          <div className="anonymousLayout__content__wrapper">{children}</div>
         </div>
-      )}
-      <div className="anonymousLayout__content">{children}</div>
+      </div>
     </div>
   )
 }

@@ -1,11 +1,16 @@
 @import 'styles/shared/padding.scss';
+@import 'styles/abstracts/mixins.scss';
 
 .homeContent {
   @extend %pb-16;
   @extend %pt-16;
 
   &__tabs {
-    @extend %pb-32
+    @extend %pb-32;
+
+    @include responds-to("medium") {
+      padding-bottom: 0;
+    }
   }
 
   &__content {}

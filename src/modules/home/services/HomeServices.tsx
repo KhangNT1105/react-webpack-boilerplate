@@ -7,9 +7,17 @@ const HomeServices: React.FC = () => {
   const CAROUSEL_SERVICES_ID = 'services'
   const images = [service1, service1, service1]
   const { t } = useTranslation()
+  const responsive = {
+    0: {
+      items: 1,
+    },
+    1024: {
+      items: 2,
+    },
+  }
   return (
     <div className="homeServices">
-      <div className="homeServices__wrapper">
+      <div className="homeServices__wrapper container">
         <div className="homeServices__header">
           <div className="homeServices__section">
             <h4>{t('HOME/SPECIAL_SERVICES')}</h4>
@@ -20,7 +28,11 @@ const HomeServices: React.FC = () => {
           </div>
         </div>
         <div className="homeServices__content">
-          <Carousel id={CAROUSEL_SERVICES_ID} images={images} />
+          <Carousel
+            responsive={responsive}
+            id={CAROUSEL_SERVICES_ID}
+            images={images}
+          />
         </div>
       </div>
     </div>
