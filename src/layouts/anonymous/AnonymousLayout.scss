@@ -7,6 +7,7 @@
   background-image: url('../../assets/images/login/background.png');
   background-size: cover;
   object-fit: cover;
+  background-repeat: no-repeat;
 
   @include responds-to('medium') {
     background-image: url('../../assets/images/login/backgroundPC.png');
@@ -15,16 +16,27 @@
 
   &__wrapper {}
 
-  &__header {
-    width: 100%;
-    flex: 0 1 auto;
 
-    svg {
-      font-size: 50px;
-    }
-  }
 
   &__content {
+    position: relative;
+
+    &__header {
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      position: absolute;
+      transform: translateY(-18%);
+      max-width: 1200px;  
+
+      svg {
+        font-size: 50px;
+        cursor: pointer;
+
+      }
+    }
+
     flex: 1 1 auto;
 
     width: 100%;
@@ -32,9 +44,13 @@
 
 
     &__wrapper {
-      margin: 0 auto;
-      max-width: 500px;
 
+      // margin: 0 auto;
+      // max-width: 500px;
+      @include responds-to('large') {
+        margin-top: 50px;
+
+      }
     }
   }
 }

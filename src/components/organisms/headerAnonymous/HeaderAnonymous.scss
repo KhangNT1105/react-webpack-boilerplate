@@ -1,0 +1,17 @@
+@import 'styles/abstracts/mixins';
+
+.headerAnonymous {
+  width: 100%;
+
+  &__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 0;
+    text-align: center;
+
+    @include responds-to('large') {
+      text-align: left;
+
+    }
+  }
+}

@@ -41,11 +41,17 @@
       }
     }
 
-    p {
+    .seeAll {
       @extend %description-10;
       color: $primary-color;
       text-align: right;
       font-weight: 500;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+
+      }
     }
   }
 }

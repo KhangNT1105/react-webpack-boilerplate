@@ -12,6 +12,13 @@ const appPath = path.join(__dirname, 'src')
 const stylesPath = path.join(__dirname, 'src/styles')
 const nodePath = 'node_modules'
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'dev'
+const dotenv = require('dotenv')
+const env = dotenv.config().parsed
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(env[next])
+  return prev
+}, {})
+
 module.exports = {
   entry: [path.join(appPath, 'index.tsx'), path.join(stylesPath, 'index.scss')],
   resolve: {
@@ -21,9 +28,7 @@ module.exports = {
   plugins: [
     new ESLintPlugin({}),
     // global variables
-    new DefinePlugin({
-      IS_DEVELOPMENT,
-    }),
+    new DefinePlugin(envKeys),
     // copy folder
     new CopyWebpackPlugin({
       patterns: [

@@ -2,7 +2,9 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import './HomeServices.scss'
 import service1 from 'assets/images/home/service1.png'
-import Carousel from 'components/molecules/Carousel'
+import Carousel from 'components/molecules/carousel/Carousel'
+import { Link } from 'react-router-dom'
+import { RoutesString } from 'routes/routesString'
 const HomeServices: React.FC = () => {
   const CAROUSEL_SERVICES_ID = 'services'
   const images = [service1, service1, service1]
@@ -24,7 +26,9 @@ const HomeServices: React.FC = () => {
           </div>
           <div className="homeServices__title">
             <h5>{t('HOME/EXCLUSIVE_FOR_YOU')}</h5>
-            <p>{t('HOME/SEE_ALL').toUpperCase()}</p>
+            <Link to={RoutesString.Home} className="seeAll">
+              {t('HOME/SEE_ALL').toUpperCase()}
+            </Link>
           </div>
         </div>
         <div className="homeServices__content">
@@ -32,6 +36,7 @@ const HomeServices: React.FC = () => {
             responsive={responsive}
             id={CAROUSEL_SERVICES_ID}
             images={images}
+            disableDotsControls={false}
           />
         </div>
       </div>

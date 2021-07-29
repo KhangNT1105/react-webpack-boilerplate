@@ -18,7 +18,7 @@ window.addEventListener('online', () => {
   isOnline = true
 })
 
-const api: APIFunction = async ({
+const API: APIFunction = async ({
   url,
   params = '',
   method = 'get',
@@ -59,4 +59,4 @@ const api: APIFunction = async ({
   }
 }
 
-export default api
+export default API

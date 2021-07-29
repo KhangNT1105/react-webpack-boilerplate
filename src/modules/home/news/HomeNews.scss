@@ -24,6 +24,18 @@
   &__pc {
     display: none;
 
+    &__carousel {
+      position: relative;
+
+      .alice-carousel__dots {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+
+      }
+    }
+
     @include responds-to("medium") {
       display: block;
 

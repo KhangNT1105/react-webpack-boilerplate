@@ -3,6 +3,8 @@ import './AnonymousLayout.scss'
 import { RiArrowLeftSLine } from 'react-icons/ri'
 import { useHistory } from 'react-router-dom'
 import { RoutesString } from 'routes/routesString'
+import HeaderAnonymous from 'components/organisms/headerAnonymous/HeaderAnonymous'
+import ErrorBoundary from 'containers/errorBoundary/ErrorBoundary'
 const AnonymousLayout: React.FC = ({ children }) => {
   const { location, push } = useHistory()
   const isLoginPath =
@@ -14,13 +16,16 @@ const AnonymousLayout: React.FC = ({ children }) => {
   return (
     <div className="anonymousLayout">
       <div className="anonymousLayout__wrapper">
-        {!isLoginPath && (
-          <div className="anonymousLayout__header" onClick={handleClickGoBack}>
-            <RiArrowLeftSLine />
-          </div>
-        )}
+        <HeaderAnonymous />
         <div className="anonymousLayout__content">
-          <div className="anonymousLayout__content__wrapper">{children}</div>
+          {!isLoginPath && (
+            <div className="anonymousLayout__content__header">
+              <RiArrowLeftSLine onClick={handleClickGoBack} />
+            </div>
+          )}
+          <div className="anonymousLayout__content__wrapper">
+            <ErrorBoundary>{children}</ErrorBoundary>
+          </div>
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ const { merge } = require('webpack-merge')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 const webpack = require('webpack')
+
 module.exports = merge(config, {
   mode: 'development',
   entry: [

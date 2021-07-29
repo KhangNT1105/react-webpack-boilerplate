@@ -1,4 +1,5 @@
 @import 'styles/abstracts/variables.scss';
+@import 'styles/abstracts/mixins.scss';
 @import 'styles/shared/descriptions.scss';
 
 .dropdown {
@@ -6,10 +7,58 @@
     position: relative;
   }
 
+  &__label {
+    display: flex;
+    align-items: center;
+
+    .icon {
+      padding-top: 5px;
+      padding-left: 5px;
+
+      @include responds-to('large') {
+        padding-left: 15px;
+
+      }
+    }
+  }
+
   &__items {
     position: absolute;
-    top: 0;
-    left: 0;
+
+    &.top {
+      bottom: 0;
+
+      &.left {
+        transform-origin: bottom right;
+      }
+
+      &.right {
+        transform-origin: bottom left;
+      }
+    }
+
+    &.bottom {
+      top: 0;
+
+      &.left {
+        transform-origin: top right;
+
+      }
+
+      &.right {
+        transform-origin: top left;
+
+      }
+    }
+
+    &.left {
+      right: 0;
+    }
+
+    &.right {
+      left: 0;
+    }
+
     background-color: $color-white;
     z-index: -1;
     min-width: 180px;
@@ -19,7 +68,6 @@
     max-height: 180px;
     overflow: auto;
     opacity: 0;
-    transform-origin: top left;
     transition: .3s;
     transform: scale(0.5);
 

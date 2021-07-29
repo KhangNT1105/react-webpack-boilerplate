@@ -3,17 +3,27 @@ import { applyMiddleware, compose, createStore } from 'redux'
 import { routerMiddleware } from 'connected-react-router'
 import createRootReducer from './rootReducers'
 import thunk from 'redux-thunk'
-
-export default function configureStore(history: any, preloadedState: any) {
+import localForage from 'localforage'
+// import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+import { persistStore, persistReducer } from 'redux-persist'
+export default function configureStore(history: any) {
   const middleware = [thunk, routerMiddleware(history)]
 
+  let config = {
+    key: 'root',
+    storage: localForage,
+    whitelist: ['app'],
+    debug: process.env.NODE_ENV !== 'production',
+  }
+  const persistedReducer = persistReducer(config, createRootReducer(history)) // root reducer with router state
   const store = createStore(
-    createRootReducer(history), // root reducer with router state
-    preloadedState,
+    persistedReducer,
     compose(applyMiddleware(...middleware))
   )
 
-  return store
+  let persistor = persistStore(store)
+
+  return { store, persistor }
 }
 
 // const store = createStore(

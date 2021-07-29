@@ -135,12 +135,9 @@ const SignUpForm: React.FC<ISignUpForm> = ({ initialValues, handleSubmit }) => {
       name: SIGN_UP_FIELD.TNC,
       label: (
         <strong>
-          {t('SIGNUP/I_AGREE_TO')}{' '}
-          <Link to={RoutesString.Home}>
-            {t('SIGNUP/THE_TERMS_AND_CONDITIONS')}
-          </Link>{' '}
-          {t('SIGNUP/AND')}{' '}
-          <Link to={RoutesString.Home}>{t('SIGNUP/PRIVACY_POLICY')} </Link>
+          {t('I_AGREE_TO')}{' '}
+          <Link to={RoutesString.Home}>{t('THE_TERMS_AND_CONDITIONS')}</Link>{' '}
+          {t('AND')} <Link to={RoutesString.Home}>{t('PRIVACY_POLICY')} </Link>
         </strong>
       ),
     },

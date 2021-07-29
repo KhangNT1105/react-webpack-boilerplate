@@ -14,7 +14,7 @@ const LoginWrapper: React.FC = () => {
   const handleSubmit = async () => {}
   return (
     <div className="login">
-      <div className="login__wrapper">
+      <div className="login__wrapper container">
         <LoginTitle />
         <LoginForm initialValues={initialValues} handleSubmit={handleSubmit} />
         <LoginFooter />

@@ -1,8 +1,19 @@
 @import 'styles/abstracts/variables.scss';
+@import 'styles/abstracts/mixins.scss';
 @import 'styles/shared/padding.scss';
 
 .loginFooter {
   text-align: center;
+
+  &__wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  @include responds-to('large') {
+    text-align: left;
+
+  }
 
   &__signUp {
     @extend %pb-8;

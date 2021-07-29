@@ -80,3 +80,33 @@ p {
 strong {
   font-weight: 600;
 }
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.display-lg {
+  display: none;
+
+  @media screen and (min-width:992px) {
+    display: block;
+
+  }
+}
+
+.hidden-lg {
+  display: block;
+
+  @media screen and (min-width:992px) {
+    display: none !important;
+
+  }
+}

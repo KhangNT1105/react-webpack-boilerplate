@@ -1,0 +1,63 @@
+@import 'styles/abstracts/variables';
+@import 'styles/abstracts/mixins';
+@import 'styles/abstracts/functions';
+@import 'styles/shared/descriptions';
+@import 'styles/shared/padding';
+@import 'styles/shared/titles';
+
+.card {
+  cursor: pointer;
+
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+
+    .card__wrapper {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  }
+
+  &__img {
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      transform: scale(1);
+      transition: .3s;
+    }
+  }
+
+  &__wrapper {
+    box-shadow: 0px 2px 8px rgba(74, 74, 74, 0.1);
+    transition: .3s;
+  }
+
+  &__content {
+    padding: 0 12px 16px;
+
+    &__title {
+      @extend %description-10;
+      font-weight: 700;
+      padding: 8px 0 4px;
+    }
+
+    &__description {
+      @extend %title-12;
+      @include limitLines();
+
+      p {
+        line-height: toRem(21);
+      }
+    }
+
+    &__points {
+      p {
+        color: $color-gold;
+        @extend %description-10;
+        font-weight: 700;
+      }
+    }
+  }
+
+}

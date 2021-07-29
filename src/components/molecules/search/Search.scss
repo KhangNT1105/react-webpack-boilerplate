@@ -1,0 +1,42 @@
+@import 'styles/abstracts/variables.scss';
+@import 'styles/abstracts/mixins.scss';
+
+.search {
+  width: 100%;
+
+  &__wrapper {
+    background-color: $color-grey-7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    border-radius: 100px;
+
+    @include responds-to('large') {
+      padding: 13px 16px;
+
+    }
+  }
+
+  &__input {
+    width: 90%;
+
+    input {
+      width: 100%;
+      border: none;
+      background-color: transparent;
+      font-family: 'Montserrat';
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+
+  &__icon {
+    svg {
+      font-size: 1.5rem;
+    }
+  }
+}

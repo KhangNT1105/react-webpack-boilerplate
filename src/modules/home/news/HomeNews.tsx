@@ -1,8 +1,8 @@
 import React from 'react'
 import './HomeNews.scss'
 import { useTranslation } from 'react-i18next'
-import Carousel from 'components/molecules/Carousel'
-import img2 from 'assets/images/home/carouselPC.png'
+import Carousel from 'components/molecules/carousel/Carousel'
+import img2 from 'assets/images/home/carousel2.png'
 const HomeNews: React.FC = () => {
   const carouselItems = [img2, img2, img2]
   const { t } = useTranslation()
@@ -10,6 +10,7 @@ const HomeNews: React.FC = () => {
     images: carouselItems,
     slidesPerPage: 1,
     id: 'news',
+    disableDotsControls: false,
   }
   return (
     <div className="homeNews">

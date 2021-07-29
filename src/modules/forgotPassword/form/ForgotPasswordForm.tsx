@@ -81,7 +81,7 @@ const ForgotPasswordForm: React.FC<IForgotPasswordForm> = ({
                     <InputAdornment position="start">
                       <Dropdown
                         handleChange={handleDropdownChange}
-                        items={countryCodes}
+                        items={[]}
                         defaultValue={countryCodes[0].items[0].value}
                       />
                     </InputAdornment>

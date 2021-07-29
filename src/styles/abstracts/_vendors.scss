@@ -1,0 +1,27 @@
+.MuiPagination-root {
+  .MuiPagination-ul {
+    .MuiButtonBase-root {
+      min-width: 25px;
+      height: 25px;
+
+      @include responds-to("medium") {
+        min-width: 32px;
+        height: 32px;
+      }
+    }
+  }
+}
+
+.MuiSkeleton-root {}
+
+.alice-carousel__dots {
+  &-item {
+    background-color: $color-silver-chalice !important;
+    margin-right: 8px !important;
+
+    &.__active {
+      background-color: $color-black !important;
+
+    }
+  }
+}

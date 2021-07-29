@@ -1,4 +1,4 @@
-import { IAuthTypes } from 'store/actions/auth/authAction.d'
+import { IAuthType } from 'store/actions/auth/authAction.d'
 import { IAuthCreator, IAuthState } from './authReducer.d'
 const initialState: IAuthState = {
   user: 'khangdzai',
@@ -6,7 +6,7 @@ const initialState: IAuthState = {
 
 export default (state = initialState, { type, payload }: IAuthCreator) => {
   switch (type) {
-    case IAuthTypes.LOGIN_SUCCESS:
+    case IAuthType.LOGIN_SUCCESS:
       return { ...state, ...payload }
 
     default:

@@ -12,6 +12,7 @@ export enum FIELD_TYPE {
   CHECKBOX = 'checkbox',
   EMAIL = 'email',
   SUBMIT = 'submit',
+  SELECT = 'select',
 }
 
 export enum VARIANT {
@@ -38,4 +39,34 @@ export enum FORGOT_PASSWORD_FIELD {
 export enum CHANGE_PASSWORD_FIELD {
   NEW_PASSWORD = 'newPassword',
   CONFIRM_PASSWORD = 'confirmPassword',
+}
+
+export enum RESET_PASSWORD_FIELD {
+  NEW_PASSWORD = 'newPassword',
+  CONFIRM_PASSWORD = 'confirmPassword',
+}
+
+export enum MY_PROFILE_FIELD {
+  USER_ID = 'userId',
+  MOBILE_NUMBER = 'mobileNumber',
+  FULL_NAME = 'fullName',
+  EMAIL = 'email',
+  ADDRESS = 'address',
+  GENDER = 'gender',
+  FASHION = 'fashion',
+  BEAUTY = 'beauty',
+  HOME = 'home',
+  TECHNOLOGY = 'technology',
+  FOOD = 'food',
+  EDM = 'edm',
+  SMS = 'sms',
+  TNC = 'tnc',
+}
+
+export enum CONTACT_US_FIELD {
+  MOBILE_NUMBER = 'mobileNumber',
+  FULL_NAME = 'fullName',
+  EMAIL = 'email',
+  ENQUIRY_CATEGORY = 'enquiryCategory',
+  MESSAGE = 'message',
 }

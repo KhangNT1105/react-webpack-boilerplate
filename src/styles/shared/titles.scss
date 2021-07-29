@@ -1,17 +1,17 @@
-@use "sass:math";
 @import 'styles/abstracts/variables.scss';
+@import 'styles/abstracts/functions.scss';
 
-@function toRem($value) {
-  $remValue: math.div($value, 12) + rem;
-  @return $remValue;
-}
 
-$sizes: 40,
+
+$sizes: 64,
+54,
+40,
 32,
 30,
 24,
 20,
 16,
+12,
 10,
 8;
 

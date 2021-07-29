@@ -1,10 +1,9 @@
 export const RoutesString = {
-  Home: '/home',
+  Home: '/',
   Login: '/login',
   SignUp: '/signup',
-  Onboarding: '/',
   ForgotPassword: '/forgot-password',
-  ChangePassword: '/change-password',
-  Rewards: '/rewards',
   Error404: '/404',
+  ResetPassword: '/reset-password',
+  EventDetail: '/event/:id',
 }

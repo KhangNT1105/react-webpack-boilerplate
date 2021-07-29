@@ -1,0 +1,12 @@
+.carousel {
+  &-item {
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover {}
+
+    img {
+      width: 100%;
+    }
+  }
+}

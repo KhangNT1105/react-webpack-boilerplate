@@ -1,0 +1,30 @@
+@import 'styles/abstracts/variables';
+
+.breadcrumb {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+
+  p {
+    font-family: 'montserrat';
+    font-weight: 500;
+  }
+
+  a {
+    transition: .3s;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  a,
+  .splash {
+    color: $color-dusty-gray
+  }
+
+  .splash {
+    padding: 0 10px;
+  }
+}

@@ -1,0 +1,29 @@
+@import 'styles/abstracts/variables';
+
+.progressBar {
+  width: 100%;
+  height: 4px;
+  background-color: $color-alto;
+  position: relative;
+
+  &__process {
+    background: linear-gradient(90deg, #825E44 22.64%, #916B49 29.63%, #B88D57 43.61%, #EAB868 59%, #BD9257 86.97%, #C7A15D 95.36%, #E0C86E 110.75%, #F4E77C 121.94%, #F6F6C8 162.5%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 4px;
+
+    &::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background-color: $color-energy-yellow;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      border: 4px solid $color-husk;
+    }
+  }
+}

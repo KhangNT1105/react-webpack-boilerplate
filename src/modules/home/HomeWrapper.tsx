@@ -7,12 +7,7 @@ import HomeServices from './services/HomeServices'
 const HomeWrapper: React.FC = () => {
   return (
     <div className="home">
-      <div className="home__wrapper">
-        <HomeBanner />
-        <HomeNews />
-        <HomeContent />
-        <HomeServices />
-      </div>
+      <div className="home__wrapper">Home</div>
     </div>
   )
 }

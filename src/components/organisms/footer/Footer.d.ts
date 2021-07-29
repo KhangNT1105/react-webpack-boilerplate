@@ -1,4 +1,6 @@
+import React from 'react'
+
 export interface IFooterLink {
-  title: string
+  title: string | React.ReactNode
   to: string
 }

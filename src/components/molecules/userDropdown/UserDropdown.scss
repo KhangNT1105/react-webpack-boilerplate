@@ -1,0 +1,57 @@
+@import 'styles/abstracts/variables';
+@import 'styles/shared/titles';
+@import 'styles/shared/descriptions';
+
+.userDropdown {
+  background-color: $color-white;
+  width: 100%;
+  min-width: 288px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(74, 74, 74, 0.15);
+
+  &__info {
+    &__description {
+      text-align: center;
+      font-size: 10px;
+      font-weight: 300;
+      width: 80%;
+      margin: 0 auto;
+      padding: 15px 0;
+      line-height: 13px;
+    }
+
+    &__points {
+      display: flex;
+      align-items: center;
+      padding: 15px 16px;
+      justify-content: space-between;
+
+      .points {
+        @extend %description-12;
+        line-height: 19.5px;
+      }
+
+      .dueDate {
+        font-size: 10px;
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__routes {}
+
+  &__route {
+    border-top: 1px solid $color-alto;
+    padding: 12px 16px;
+    transition: .3s;
+
+    &:hover {
+      background-color: $color-grey-1;
+    }
+
+    a {
+      text-decoration: none;
+      color: $color-black;
+    }
+  }
+}

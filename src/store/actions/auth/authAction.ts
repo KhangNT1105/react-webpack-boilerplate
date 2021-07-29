@@ -1,6 +1,6 @@
 import { Dispatch } from 'react'
-import { IAuthTypes } from './authAction.d'
+import { IAuthType } from './authAction.d'
 
 export const login = () => (dispatch: Dispatch<any>) => {
-  dispatch({ type: IAuthTypes.LOGIN_REQUEST })
+  dispatch({ type: IAuthType.LOGIN_REQUEST })
 }

@@ -17,7 +17,6 @@ const Spinner = () => {
         <div className="spinner__logo">
           <img src={logo} alt="logo" />
         </div>
-        <img src={textSpinner} alt="logo text" />
       </div>
     </animated.div>
   )

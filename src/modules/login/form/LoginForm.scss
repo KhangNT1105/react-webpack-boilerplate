@@ -1,5 +1,6 @@
 @import 'styles/shared/descriptions.scss';
 @import 'styles/shared/padding.scss';
+@import 'styles/abstracts/mixins';
 
 .loginForm {
   @extend %pb-32;
@@ -22,6 +23,15 @@
     .form {
       &__field {
         @extend %pb-16;
+      }
+
+      button {
+        max-width: 326px;
+
+        @include responds-to('large') {
+          background-color: $primary-color;
+
+        }
       }
     }
   }

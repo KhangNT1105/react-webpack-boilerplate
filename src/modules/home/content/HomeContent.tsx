@@ -16,6 +16,11 @@ const useStyles = makeStyles({
     // margin: '0 12px',
     minWidth: 51,
     minHeight: 0,
+    transition: '.3s',
+    '&:hover': {
+      textShadow: '0px 0px 1px #E21936',
+      color: '#E21936',
+    },
   },
   tabTitleSelected: {
     fontWeight: 600,
@@ -33,8 +38,9 @@ const HomeContent: React.FC = () => {
   }
   const tabs = [t('HOME/EVENTS').toUpperCase(), t('HOME/REWARDS').toUpperCase()]
   const renderTabs = (tabs: string[]) =>
-    tabs.map((tab) => (
+    tabs.map((tab, index) => (
       <Tab
+        key={`tab-${index}`}
         classes={{ root: classes.tabTitle, selected: classes.tabTitleSelected }}
         label={tab}
       />

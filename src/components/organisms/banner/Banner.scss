@@ -1,0 +1,27 @@
+@import 'styles/shared/titles.scss';
+@import 'styles/shared/descriptions.scss';
+@import 'styles/shared/padding.scss';
+@import 'styles/abstracts/variables.scss';
+@import 'styles/abstracts/mixins.scss';
+
+.banner {
+  background-image: url('../../../assets/images/home/banner.png');
+  background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  min-height: 250px;
+  position: relative;
+  padding-top: 80px;
+
+  @include responds-to('large') {
+    background-image: url('../../../assets/images/home/bannerPC.png');
+    height: calc(10vw + 70px);
+    height: 350px;
+    padding-top: 140px;
+
+  }
+
+  &__wrapper {
+    height: 100%;
+  }
+}

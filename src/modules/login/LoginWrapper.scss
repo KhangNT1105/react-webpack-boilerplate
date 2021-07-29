@@ -1,16 +1,19 @@
 @import 'styles/shared/titles.scss';
 @import 'styles/shared/descriptions.scss';
 @import 'styles/shared/padding.scss';
+@import 'styles/abstracts/mixins.scss';
 
 .login {
   height: 100vh;
   max-height: 100vh;
-  background-image: url('../../assets/images/login/background.png');
   width: 100%;
-  background-size: cover;
-  object-fit: cover;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   min-height: -webkit-fill-available;
 
+  @include responds-to('large') {
+    align-items: flex-start;
+
+  }
 }

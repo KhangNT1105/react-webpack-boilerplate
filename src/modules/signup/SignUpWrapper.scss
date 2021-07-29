@@ -1,12 +1,12 @@
 @import 'styles/shared/titles.scss';
 @import 'styles/shared/descriptions.scss';
 @import 'styles/shared/padding.scss';
+@import 'styles/abstracts/mixins';
 
 .signUp {
   width: 100%;
   display: grid;
   place-items: center;
-  @extend %pt-16;
 
   &__wrapper {
     // width: 90%;
@@ -20,6 +20,11 @@
     h1 {
       @extend %title-24;
       text-align: center;
+
+      @include responds-to('large') {
+        font-size: 30px;
+        font-weight: 700
+      }
     }
   }
 
@@ -28,6 +33,11 @@
     text-align: center;
     width: 90%;
     margin: 0 auto;
+
+    @include responds-to('large') {
+      width: 45%;
+
+    }
 
     p {
       @extend %description-12

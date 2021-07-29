@@ -2,6 +2,7 @@
 @import 'styles/abstracts/mixins.scss';
 
 .homeContent {
+  min-height: 80vh;
   @extend %pb-16;
   @extend %pt-16;
 

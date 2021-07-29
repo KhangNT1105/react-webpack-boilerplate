@@ -23,12 +23,19 @@
       }
     }
 
-    p {
-      @extend %description-10;
 
-      color: $primary-color;
-      text-align: right;
-      font-weight: 500;
+  }
+
+  .seeAll {
+    @extend %description-10;
+    color: $primary-color;
+    text-align: right;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+
     }
   }
 
@@ -36,19 +43,31 @@
     &__events {
       display: grid;
       grid-template-columns: repeat(2, minmax(100px, 1fr));
-      gap: 8px;
+      gap: 16px;
 
       @include responds-to("medium") {
         grid-template-columns: repeat(3, minmax(100px, 1fr));
-        gap: 55px;
+        gap: 33px;
 
       }
 
       .event {
         border-radius: 8px;
         overflow: hidden;
+        transition: .3s;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+          img {
+            transform: scale(1.20);
+          }
+        }
 
         img {
+          transition: .3s;
+          transform: scale(1.15);
           width: 100%;
         }
       }

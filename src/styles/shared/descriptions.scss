@@ -16,10 +16,6 @@
 
 @import 'styles/abstracts/variables.scss';
 
-@function toRem($value) {
-  $remValue: math.div($value, 12) + rem;
-  @return $remValue;
-}
 
 $sizes: 40,
 32,
